@@ -17,13 +17,13 @@ By automating log rotation and compression, logrotate ensures your log files are
 ### Installation of logrotate
 
 ```
- - sudo apt-get update
- - sudo apt-get install logrotate
+sudo apt-get update
+sudo apt-get install logrotate
 ```
 
 ### Logrotate configuration
 ```
- - sudo nano /etc/logrotate.d/mylog
+sudo nano /etc/logrotate.d/mylog
 ```
 Copy and paste the configuration in the file.conf
 
@@ -31,29 +31,29 @@ This configuration will cause logrotate to rotate myfile.log when it reaches 1GB
 
 ### Testing the logrotate configuration
 ```
- - sudo logrotate --debug /etc/logrotate.d/mylog
+sudo logrotate --debug /etc/logrotate.d/mylog
 ```
 This command will run logrotate in debug mode, meaning it will show you exactly what it would do, but without actually performing the actions.
 
 Remember, logrotate is normally run as a daily cron job, so changes you make to the configuration won't take effect until the next day. If you want to force logrotate to run immediately, you can do so with the following command:
 ```
- - sudo logrotate -f /etc/logrotate.conf
+sudo logrotate -f /etc/logrotate.conf
 ```
 ### Execute logrotate 
 ```
- - sudo logrotate -f /etc/logrotate.conf (force the rotation)
- - sudo logrotate /etc/logrotate.conf (apply rotation if max size reached)
+sudo logrotate -f /etc/logrotate.conf (force the rotation)
+sudo logrotate /etc/logrotate.conf (apply rotation if max size reached)
 ```
 
 
 ### Custom crontab
 If you want setting a custom crontab:
 ```
- - crontab -3
+crontab -3
 ```
 Insert
 ```
- - * * * * * /usr/sbin/logrotate /etc/logrotate.conf
+* * * * * /usr/sbin/logrotate /etc/logrotate.conf
 ```
 By default logrotate run once a day
 
