@@ -20,6 +20,7 @@ By automating log rotation and compression, logrotate ensures your log files are
 
 ### Logrotate configuration
  - sudo nano /etc/logrotate.d/mylog
+
 Copy and paste the configuration in the file.conf
 
 This configuration will cause logrotate to rotate myfile.log when it reaches 1GB in size (size 1G). It will keep the last 4 copies of the log file (rotate 4), compress the log file copies except the last one (compress and delaycompress), silently ignore missing log files (missingok), and create new log files with permissions specified if the log file is deleted (create 0640 root adm).
